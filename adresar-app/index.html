@@ -14,16 +14,23 @@
       <input type="text" id="name" placeholder="Jméno">
       <input type="text" id="phone" placeholder="Telefon">
       <input type="email" id="email" placeholder="E-mail">
-      <button onclick="addContact()">Přidat kontakt</button>
+      <div class="button-row">
+        <button id="saveButton" onclick="addContact()">Přidat kontakt</button>
+        <button id="cancelEditButton" onclick="clearForm()" style="display:none;">Zrušit editaci</button>
+        <button onclick="exportCsv()">Export CSV</button>
+        <button onclick="createBackup()">Záloha DB</button>
+      </div>
     </div>
-
-    <div class="search-box">
-      <input type="text" id="search" placeholder="Hledat podle jména" oninput="renderContacts()">
-    </div>
-
-    <ul id="contactList"></ul>
   </div>
+
+<div class="search-box">
+  <input type="text" id="search" placeholder="Hledat podle jména, telefonu nebo e-mailu" oninput="renderContacts()">
+</div>
+
+<ul id="contactList"></ul>
 
   <script src="script.js"></script>
 </body>
 </html>
+
+
